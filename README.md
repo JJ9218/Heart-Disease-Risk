@@ -42,8 +42,19 @@ The data analysis measured a potential association between high sodium intake le
 - Which populations are disproportionately affected? What are some external barriers that impact individuals from receiving nutritional intake within the recommended guidelines of sodium levels? How can this be improved?
 
 ### Data Analysis
-Chi-square test was assessed to determine the association between CVD diagnosis and the covariates. Fisher’s exact test was used to determine the association between CVD and high sodium intake vs. recommended levels. A logistic regression was conducted to measure the association between sodium levels as a continuous variable and heart disease diagnosis, while also measuring the covariates which include age, gender, race, income, and education.
+Chi-square test was assessed to determine the association between CVD diagnosis and the covariates. Fisher’s exact test was used to determine the association between CVD and high sodium intake vs. recommended levels.
+``` SAS
+proc freq data=mergedfinal;
+table sodium*CVD/chisq;
+run;
+```
 
+A logistic regression was conducted to measure the association between sodium levels as a continuous variable and heart disease diagnosis, while also measuring the covariates which include age, gender, race, income, and education.
+``` SAS
+proc logistic data= mergedfinal;
+model CVD= DR1TSODI RIDAGEYR RIAGENDR RIDRETH3 INHHIN2 DMDEDUC2
+run;
+```
 ### Results
 A total of 2321 participants in the study reported their sodium intake levels from the dietary intake questionnaire. 66.05% reported high sodium intake levels (2300+ mg) and the average sodium intake level was 3193mg. This supports previous literature indicating the daily average of sodium intake is relatively high for Americans, higher than the recommended dietary intake of less than 2300 mg. 
 ![Sodium Intake levels](https://github.com/JJ9218/Heart-Disease-Risk/assets/163039134/78d44d39-e639-4417-a166-7a76cef67f36)
