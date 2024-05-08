@@ -1,4 +1,4 @@
-# Assesing Heart Disease Risk in the US
+# Assessing Heart Disease Risk in the US
 by J.Jones, MPH
 
 ## Table of Contents
