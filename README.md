@@ -1,5 +1,5 @@
 # Assessing Heart Disease Risk in the US
-by J.Jones, MPH
+J.Jones, MPH
 
 ## Table of Contents
 
